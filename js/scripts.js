@@ -31,6 +31,8 @@ Pizza.prototype.getCost = function() {
   };
 };
 
+
+
 // UI Logic
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -55,6 +57,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const myPizza = new Pizza(size, toppings);
     const cost = myPizza.getCost();
 
-    display.textContent = `Total cost: $${cost.totalCost.toFixed(2)} (Size Cost: $${cost.basePrice.toFixed(2)}, Topping Cost: $${cost.toppingPrice.toFixed(2)})`;
+    display.textContent = `Total cost: $${cost.totalCost.toFixed(2)}`;
   });
 });

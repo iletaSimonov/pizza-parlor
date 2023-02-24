@@ -17,19 +17,19 @@
       <img src="pizza.jpg" alt="photo of pizza">
     </div>
     <h1>Pizza Parlor</h1>
-    <div id="toppings">
+    <div>
       <form id="pizza-form">
-        <h2>Pick you pizza size:</h2>
+        <h2>Pick your pizza size:</h2>
         <label for="size-select">
           <input type="checkbox" name="size" value="Small">
-          Small
+          Small $8
           <input type="checkbox" name="size" value="Medium">
-          Medium
+          Medium $10
           <input type="checkbox" name="size" value="Large">
-          Large
+          Large $12
         </label>
         <br><br>
-        <h2>Pick you Pizza toppings:</h2>
+        <h2>Pick your toppings: ($0.75 each)</h2>
         <label for="toppings-select">
           <input type="checkbox" name="toppings" value="Pepperoni">
           Pepperoni
@@ -48,10 +48,9 @@
           <input type="checkbox" name="toppings" value="Sundried Tomatos"> Sundried Tomatos
         </label>
         <br><br>
+        <h2 id="cost-display"></h2>
         <input type="submit" value="Submit" id="submit">
       </form>
-
-      <h2 id="cost-display"></h2>
     </div>
   </body>
 </html>

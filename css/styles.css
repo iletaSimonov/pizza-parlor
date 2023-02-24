@@ -36,3 +36,7 @@ input {
   cursor: pointer;
 }
 
+#cost-display {
+  color: #5F8D37;
+}
+

@@ -1,16 +1,11 @@
 // Business Logic
 
-const pizza = {
-  toppings: [],
-  size: ''
-}
-
-function myPizza(toppings, size) {
+function Pizza(size, toppings) {
   this.size = size;
   this.toppings = toppings;
 }
 
-pizza.prototype.getCost = function() {
+Pizza.prototype.getCost = function() {
   let basePrice;
 
   switch (this.size) {
@@ -31,3 +26,33 @@ pizza.prototype.getCost = function() {
 
   return basePrice + toppingPrice;
 };
+
+// UI Logic
+
+document.addEventListener('DOMContentLoaded', () => {
+
+  const pizzaForm = document.getElementById('pizza-form');
+  const display = document.getElementById('cost-display');
+
+
+  pizzaForm.addEventListener('submit', event => {
+
+    event.preventDefault();
+
+    const sizeSelect = document.getElementById('size-select');
+    const size = sizeSelect.value;
+    const toppings = [];
+
+    const checkboxes = document.querySelectorAll('input[name="toppings"]:checked');
+    console.log(checkboxes);
+    checkboxes.forEach(checkbox => {
+      console.log(checkbox.value);
+      toppings.push(checkbox.value);
+    });
+
+    const myPizza = new Pizza(size, toppings);
+    const cost = myPizza.getCost();
+
+    display.textContent = `Total cost: $${cost.toFixed(2)}`;
+  });
+});

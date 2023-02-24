@@ -8,11 +8,3 @@ Test: "It should return the correct cost for a medium pizza with two toppings"
 Code: const pizza = new Pizza('Medium', ['Pepperoni', 'Mushrooms']);
       const cost = pizza.getCost()
 Expected Output: cost.toEqual(11);
-
-Test:
-Code:
-Expected Output:
-
-Test:
-Code:
-Expected Output:

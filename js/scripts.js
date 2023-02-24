@@ -24,7 +24,11 @@ Pizza.prototype.getCost = function() {
 
   const toppingPrice = this.toppings.length * 0.75;
 
-  return basePrice + toppingPrice;
+  return {
+    basePrice: basePrice,
+    toppingPrice: toppingPrice,
+    totalCost: basePrice + toppingPrice
+  };
 };
 
 // UI Logic
@@ -39,20 +43,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
     event.preventDefault();
 
-    const sizeSelect = document.getElementById('size-select');
+    const sizeSelect = document.querySelector('input[name="size"]:checked');
     const size = sizeSelect.value;
     const toppings = [];
 
     const checkboxes = document.querySelectorAll('input[name="toppings"]:checked');
-    console.log(checkboxes);
     checkboxes.forEach(checkbox => {
-      console.log(checkbox.value);
       toppings.push(checkbox.value);
     });
 
     const myPizza = new Pizza(size, toppings);
     const cost = myPizza.getCost();
 
-    display.textContent = `Total cost: $${cost.toFixed(2)}`;
+    display.textContent = `Total cost: $${cost.totalCost.toFixed(2)} (Size Cost: $${cost.basePrice.toFixed(2)}, Topping Cost: $${cost.toppingPrice.toFixed(2)})`;
   });
 });

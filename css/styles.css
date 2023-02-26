@@ -1,18 +1,28 @@
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #FFF1D7;
   letter-spacing: 3px;
   text-align: center;
   color: #5F8D37;
+  background-image: url("za-back.png");
 }
+
 img {
   height: 10%;
   width: 10%;
   border-radius: 100px;
 }
 
+#header {
+  width: 100%;
+  height: 10%;
+  border-radius: 3px;
+}
+
 h1 {
-  font-size: 80px;
+  font-size: 50px;
+  background-color: black;
+  border-radius: 5px;
+  padding: 15px;
 }
 
 h2 {
@@ -27,7 +37,7 @@ input {
   padding: 7px;
   border-radius: 7px;
   width: 20%;
-  background-color: rgba(247, 173, 69, 0.7);
+  background-color: rgba(247, 173, 69);
   letter-spacing: 3px;
 }
 
@@ -40,3 +50,19 @@ input {
   color: #5F8D37;
 }
 
+form {
+  background-color: black;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+#cost-display {
+  background-color: black;
+  padding: 20px;
+}
+
+#photos {
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+}
